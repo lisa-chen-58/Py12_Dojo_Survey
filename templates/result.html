@@ -9,26 +9,26 @@
 </head>
 <body class="bg-info">
     <h1>Submitted Info</h1>
-    <table class="table table-striped">
+    <table class="table table-striped card">
         <tbody>
             <tr>
                 <td>Name:</td>
-                <td> {{ name }} </td>
+                <td> {{ session['name'] }} </td>
             </tr>
             <tr>
                 <td>Dojo Location:</td>
-                <td> {{ location }} </td>
+                <td> {{ session['location'] }} </td>
             </tr>
             <tr>
                 <td>Favorite Language:</td>
-                <td> {{ language }} </td>
+                <td> {{ session['language'] }} </td>
             </tr>
             <tr>
                 <td>Comment:</td>
-                <td> {{ Comment }} </td>
+                <td> {{ session['language']Comment }} </td>
             </tr>
             <tr>
-                <a class="btn btn-primary btn-lg btn-block" href="/">Go Back</a>
+                <a class="btn btn-primary btn-md btn-block" href="/">Go Back</a>
             </tr>
         </tbody>
 

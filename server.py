@@ -8,20 +8,12 @@ def index():
     return render_template("index.html")
 
 @app.route('/process',methods=['POST'])
-def user():
-    print(request.form)
-    
-    session['name']=request.form['name']
-    session['location']=request.form['location']
-    session['language']=request.form['language']
-    session['comment']=request.form['comment']
-    
-    name=session['name']
-    location=session['location']
-    language=session['language']
-    comment=session['comment']
-    
-    return redirect("/result")
+def process():
+    session['name'] = request.form['name']
+    session['location'] = request.form['location']
+    session['language'] = request.form['language']
+    session['comments'] = request.form['comments']
+    return redirect('/success')
 
 @app.route('/result')
 def result():
