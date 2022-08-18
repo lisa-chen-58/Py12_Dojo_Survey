@@ -7,31 +7,38 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Survey Result</title>
 </head>
-<body class="bg-info">
-    <h1>Submitted Info</h1>
-    <table class="table table-striped card">
-        <tbody>
-            <tr>
-                <td>Name:</td>
-                <td> {{ session['name'] }} </td>
-            </tr>
-            <tr>
-                <td>Dojo Location:</td>
-                <td> {{ session['location'] }} </td>
-            </tr>
-            <tr>
-                <td>Favorite Language:</td>
-                <td> {{ session['language'] }} </td>
-            </tr>
-            <tr>
-                <td>Comment:</td>
-                <td> {{ session['language']Comment }} </td>
-            </tr>
-            <tr>
-                <a class="btn btn-primary btn-md btn-block" href="/">Go Back</a>
-            </tr>
-        </tbody>
-
-    </table>
+<body class="bg-dark text-light text-center row justify-content-center">
+    
+    <div class = "col-auto ">
+        <h1>Submitted Info</h1>
+        <table class="table table-striped card">
+            <caption class="text-dark bg-warning text-center"><strong>Your inputs!</strong></caption>
+            <tbody>
+                <tr>
+                    <th>Name:</th>
+                    <td> {{ session['name'] }} </td>
+                </tr>
+                <tr>
+                    <th>Dojo Location:</th>
+                    <td> {{ session['location'] }} </td>
+                </tr>
+                <tr>
+                    <th>Favorite Languages:</th>
+                    <td>    
+                        {% for language in session['language']:  %}
+                            | {{language}} |
+                        {% endfor %}                
+                    </td>
+                </tr>
+                <tr>
+                    <th>Comment:</th>
+                    <td>{{session['comment']}}</td>
+                </tr>
+                <tr>
+                    <a class="btn btn-primary btn-md btn-block" href="/">Go Back</a>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

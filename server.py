@@ -9,11 +9,19 @@ def index():
 
 @app.route('/process',methods=['POST'])
 def process():
-    session['name'] = request.form['name']
-    session['location'] = request.form['location']
-    session['language'] = request.form['language']
-    session['comments'] = request.form['comments']
-    return redirect('/success')
+    if 'key' not in session:
+        session['key'] = 0
+        return redirect('/')
+    else:
+        session['name'] = request.form['name']
+        session['comment'] = request.form['comment']
+        session['location'] = request.form['location']
+        session['language'] = request.form.getlist('language')
+        print(session['language'])
+        # session['location'] =session['language'].append(request.form.getlist['language'])
+        # print(session['language'])
+
+    return redirect('/result')
 
 @app.route('/result')
 def result():
