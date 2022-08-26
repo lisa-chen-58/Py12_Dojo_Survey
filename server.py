@@ -17,7 +17,9 @@ def process():
         session['comment'] = request.form['comment']
         session['location'] = request.form['location']
         session['language'] = request.form.getlist('language')
-        print(session['language'])
+        print(request.form['language'])
+        print("--------------------")
+
         # session['location'] =session['language'].append(request.form.getlist['language'])
         # print(session['language'])
 
